@@ -1,0 +1,404 @@
+
+:root{
+    --orange:#e67e22;
+    --black:#333;
+    --light-color:#777;
+    /* --blue:#2980b9; */
+    --blue:rgb(119, 162, 225);
+    --border:.1rem solid rgba(0,0,0,0.2);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,0.1);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: lighter;
+}
+html{
+    font-size: 62.5%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+.navbar .header{
+    background-color: black;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 7%;
+
+}
+.navbar .header .logo{
+    color: var(--black);
+    font-size: 2.5rem;
+    margin-right: auto;
+}
+
+.navbar .header .logo span{
+    color: var(--orange);
+}
+
+.navbar .header .nav a{
+    color: var(--light-color);
+    margin-right: 2rem;
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    
+}
+.navbar .header .nav a:hover{
+    color: var(--orange);    
+}
+
+/* container111111111111111111111111111111111111111111111111111111111111111111111 */
+
+
+.container{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    gap: 1.5rem;
+    background-color: #eee;
+    padding: 10rem;
+}
+
+.container .posts-container .post{
+    width: 100%;
+    padding: 2rem;
+    background: #fff;
+    border: var(--border);
+    border-radius: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.container .posts-container .post .image{
+    height: 40rem;
+    width:100%;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+.container .posts-container .post .date{
+    padding-top: 2rem;
+    font-size: 1.5rem;
+    color: var(--orange);
+}
+
+.container .posts-container .post .title{
+    padding-top:1.5rem;
+    font-size: 2.5rem;
+    color: var(--black);
+}
+
+.container .posts-container .post .text{
+    font-size: 1.5rem;
+    line-height: 1.7;
+    padding: 1rem 0;
+    color: var(--light-color);
+}
+
+/* login signup111111111111111111111111111111111111111111111111111111111111*/
+
+.main .formcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-bottom: 70px;
+    background-color: #eee;
+    min-height: 70vh;
+
+}
+
+.main .formcontainer form{
+    width: 700px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin: 70px;
+}
+
+.main .formcontainer form .input-box{
+    padding: 50px;
+}
+
+.main .formcontainer form .input-box .title{
+    font-size: 20px;
+    color: var(--blue);
+    padding: 10px;
+}
+
+.main .formcontainer form .input-box .input{
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: var(--border);
+}
+
+.main .formcontainer form .input-box small{
+    color: var(--orange);
+    font-size: 10px;
+}
+
+.main .formcontainer form .input-box .input label{
+    height: 100%;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.main .formcontainer form .input-box .input input{
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.main .formcontainer form .sign-in-btn{
+    padding: 10px 40px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 5px;
+    background-color: var(--blue);
+    cursor: pointer;
+    transition: .2s linear;
+}
+.main .formcontainer form .sign-in-btn:hover{
+    letter-spacing: 2px;
+}
+
+
+/* dashboard00000000000000000000000000000000000000000000000000000000000000000000 */
+.container-table{
+    background-color: #eee;
+    padding: 10rem;
+}
+
+.container-table h1{
+    font-size: 25px;    
+    background-color: #83abc7;
+    text-align: center;
+    margin: 10px 0;
+}
+
+
+.container-table .a-btn{
+    margin: 10px;
+}
+
+.container-table .a-btn a{
+    padding: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+    border-radius: 5px;
+}
+
+.container-table .a-btn a:hover{
+    background-color: #008CBA;
+    color: white;
+}
+
+.container-table .a-btn form input{
+    padding: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid tomato;
+    border-radius: 5px;
+}
+
+.container-table .a-btn form input:hover{
+    background-color: Tomato;
+    color: white;
+}
+/*content table 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
+.container-table .content-table{
+    border-collapse: collapse;
+    margin-top: 25px;
+    font-size: 12px;
+    min-width: 900px;
+    border-radius: 10px 10px 0 0 ;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+}
+
+.container-table .content-table thead tr{
+    background-color: var(--blue);
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.container-table .content-table th,
+.container-table .content-table td{
+    padding: 12px 15px;
+}
+
+.container-table .content-table tbody tr{
+    border-bottom: var(--blue);
+}
+
+.container-table .content-table tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+}
+
+.container-table .content-table tbody tr:last-of-type{
+    border-bottom: 2px solid var(--blue);
+}
+
+.container-table .content-table td img{
+    background-color: black;
+    width:120px;
+    border-radius: .5rem;
+    object-fit: cover;
+}
+
+
+
+  /* addpost111111111111111111111111111111111111111111111111111111111111111111111 */
+.main .addpostcontainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    background-color: #eee;
+    height: 810px;
+}
+
+
+.main .addpostcontainer form h1{
+    background-color: #BEF;
+    color: #059;
+    text-align: center;
+    border: 1px solid #059;
+    border-radius: 3px;
+    margin-bottom: 40px;
+    padding: 5px;
+}
+.main .addpostcontainer form .input-div{
+    padding: 5px;
+    width: 900px;
+}
+.main .addpostcontainer form .input-div label{
+    color: var(--blue);
+    font-size: 17px;
+}
+.main .addpostcontainer form .input-div input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+}
+
+.main .addpostcontainer form .input-div small{
+    color: var(--orange);
+    font-size: 12px;
+    padding: auto;
+}
+
+.main .addpostcontainer form .input-div textarea{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+}
+
+.main .addpostcontainer form #id{
+    padding: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid var(--blue);
+    border-radius: 5px;
+    width: 50px;
+}
+
+.main .addpostcontainer form #id:hover{
+    background-color: var(--blue);
+    color: white;
+}
+
+.main .addpostcontainer form .a-btn{
+    padding: 10px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid tomato;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.main .addpostcontainer form .a-btn:hover{
+    background-color: Tomato;
+    color: white;
+}
+
+
+/*alert111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
+.alert {
+    padding: 10px;
+    background-color: #FFBABA;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    margin: 20px 20px 20px 20px ;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    border-radius: 10px;
+    width: 30%;
+}
+
+
+.alert p{
+    font-size: 13px;
+}
+.alert.success {
+    background-color: #DFF2BF;
+    color: #270;
+    border: 1px solid #270;
+}
+.alert.info {
+    background-color: #BEF;
+    color: #059;
+    border: 1px solid #059;
+}
+.alert.warning {
+    background-color: #feefb3;
+    color: #9F6000;
+    border: 1px solid #9F6000;
+}
+  
+.closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+.closebtn:hover {
+    color: black;
+}

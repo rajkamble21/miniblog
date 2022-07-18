@@ -1,0 +1,37 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert warning">
+    <span class="closebtn">&times;</span> 
+    <p><strong><i class="fa fa-exclamation-triangle"></i></strong> {{message}}</p>
+</div>
+{% endfor %}
+{% endif %}
+
+<div class="addpostcontainer">
+    <form action="" method="post" novalidate>
+        <h1>Login Form</h1>
+        {% csrf_token %}
+            {% for fm in form %}
+            <div class="input-div">
+                {{fm.label_tag}} <br>
+                {{fm}}<br>
+                <small class="errors">{{fm.errors|striptags}}</small><br>
+            </div>
+            {% endfor %}
+            <input type="submit" value="Login" id="id">
+            
+        {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            <div class="alert warning">
+                <span class="closebtn">&times;</span> 
+                <p><strong><i class="fa fa-exclamation-triangle"></i></strong> {{error}}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </form>
+    
+</div>
+{% endblock content %}

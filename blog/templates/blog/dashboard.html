@@ -1,0 +1,52 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+<div class="alert success">
+    <span class="closebtn">&times;</span> 
+    <p><strong><i class="fa fa-check"></i></strong> {{message}}</p>
+</div>
+{% endfor %}
+{% endif %}
+<section class="container-table">
+        <h1>Content of Table</h1><br>
+    <div class="a-btn">
+        <a href="{% url 'addpost' %}" >Add Post</a>
+    </div>
+
+    {% if posts %}
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Descriptin</th>
+                <th>Edit</th>
+                <th>Delete the</th>
+
+            </tr>
+       </thead>
+       <tbody>
+            {% for post in posts %}
+            <tr>
+                <td><img src="{{post.img.url}}" class="image"></td>
+                <td>{{post.title}}</td>
+                <td>{{post.desc}}</td>
+                <td><div class="a-btn"><a href="{% url 'updatepost' post.id %}" >Edit</a></div></td>
+                <td><div class="a-btn">
+                        <form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <input type="submit" value="Delete">
+                        </form>
+                </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <h1>No data</h1>
+    {% endif %}
+</section>
+{% endblock content %}
