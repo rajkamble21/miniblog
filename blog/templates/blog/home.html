@@ -8,8 +8,8 @@
         <div class="post">
             <img src="{{post.img.url}}" alt="" srcset="" class="image">
             <div class="date">
-                <i class="fa-regular fa-clock"></i>
-                <span>1st may, 2021</span>
+                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                <span>{{post.created_date}}</span>
             </div>
             <h3 class="title">{{post.title}}</post></h3>
             <p class="text">{{post.desc}}</p>
@@ -18,7 +18,15 @@
     </div>
     
     <div class="sidebar">
-
+        <div class="box">
+            <h3 class="title">categories</h3>
+            <div class="category">
+                {% for category in categories %}
+                <a href="/?category={{category.id}}"> {{category.name}} <span>{{ category.post_set.count }}</span></a>
+                {% endfor %}
+                <a href="/"> all <span>{{count}}</span></a>
+            </div>
+        </div>
     </div>
 </section>
 {% endblock content %}

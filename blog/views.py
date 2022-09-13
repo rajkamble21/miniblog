@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect, HttpResponse
-from .models import Post
+from .models import Post, Category
 from django.contrib import messages
 from .forms import SignUpForm, LoginForm, PostForm
 from django.contrib.auth import login, logout, authenticate
@@ -13,8 +13,16 @@ from django.core.mail import EmailMessage
 
 # Create your views here.
 def home(request):
-    posts = Post.objects.all()
-    return render(request, 'blog/home.html', {'posts':posts})
+    posts = None
+    count = None
+    categories = Category.objects.all()
+    count = Post.objects.all().count()
+    category_id = request.GET.get('category')
+    if category_id:
+        posts = Post.objects.filter(category=category_id)
+    else:
+        posts = Post.objects.all()
+    return render(request, 'blog/home.html', {'posts':posts, 'categories':categories, 'count':count})
 
 def about(request):
     return render(request, 'blog/about.html')

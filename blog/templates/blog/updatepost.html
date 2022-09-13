@@ -1,19 +1,19 @@
 {% extends 'blog/base.html' %}
 {% load static %}
 {% block content %}
-<section class="addpostcontainer">
+<section class="post-editor">
+        <h1 class="heading">update post</h1>
         <form action="" method="post" enctype="multipart/form-data">
-                <h1>Update Post</h1>
                 {% csrf_token %}
                 {% for fm in form %}
-                <div class="input-div">
-                {{fm.label_tag}} <br>
+                <p>{{fm.label_tag}} <span>*</span></p>
                 {{fm}}<br>
                 <small class="errors">{{fm.errors|striptags}}</small><br>
-                </div>
                 {% endfor %}
-                <input type="submit" id="id" value="Add">
-                <a href="{% url 'dashboard' %}" class="a-btn">cancel</a>
-        </form>
+                <div class="flex-btn">
+                        <input type="submit" id="id" value="Add" class="btn">
+                        <a href="{% url 'dashboard' %}" class="delete-btn">cancel</a>
+                </div>
+        </form>  
 </section>
 {% endblock content %}

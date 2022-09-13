@@ -9,19 +9,17 @@
 </div>
 {% endfor %}
 {% endif %}
-
-<div class="addpostcontainer">
+<div class="section">
+<div class="form_container">
     <form action="" method="post" novalidate>
-        <h1>SignUp Form</h1>
+        <h3>Register now</h3>
         {% csrf_token %}
             {% for fm in form %}
-            <div class="input-div">
-                {{fm.label_tag}} <br>
                 {{fm}}<br>
                 <small class="errors">{{fm.errors|striptags}}</small><br>
-            </div>
             {% endfor %}
-            <input type="submit" value="Login" id="id">
+            <input type="submit" class="btn" value="Login" id="id">
+            <p>already have an account? <a href="{% url 'login' %}">login now</a></p>
         {% if form.non_field_errors %}
             {% for error in form.non_field_errors %}
             <div class="alert warning">
@@ -30,7 +28,7 @@
             </div>
             {% endfor %}
         {% endif %}
-    </form>
-    
+    </form> 
+</div>
 </div>
 {% endblock content %}
