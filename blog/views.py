@@ -56,8 +56,7 @@ def user_login(request):
 def user_signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
-        if form.is_valid():
-            
+        if form.is_valid():       
             user = form.save(commit=False)  
             user.is_active = False
             user = form.save()
@@ -93,6 +92,8 @@ def activate(request, uidb64, token):
         return HttpResponseRedirect('/login/') 
     else:  
         return HttpResponse('Activation link is invalid!')  
+
+
 
 def add_post(request):
     if request.user.is_authenticated:

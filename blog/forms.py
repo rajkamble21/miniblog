@@ -18,11 +18,9 @@ class LoginForm(AuthenticationForm):
     captcha = CaptchaField()
     password = forms.CharField(widget=forms.PasswordInput())
 
-class OtpForm(forms.Form):
-    otp = forms.CharField(max_length=50, required=True)
-
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ['img','title','desc']
+
         
