@@ -9,8 +9,8 @@
 </div>
 {% endfor %}
 {% endif %}
+<section class="container-dashboard">
 <section class="container-table">
-        <h1>Content of Table</h1><br>
     <div class="a-btn">
         <a href="{% url 'addpost' %}" >Add Post</a>
     </div>
@@ -22,9 +22,7 @@
                 <th>Image</th>
                 <th>Title</th>
                 <th>Descriptin</th>
-                <th>Edit</th>
-                <th>Delete the</th>
-
+                <th>Edit/Delete</th>
             </tr>
        </thead>
        <tbody>
@@ -33,13 +31,16 @@
                 <td><img src="{{post.img.url}}" class="image"></td>
                 <td>{{post.title}}</td>
                 <td>{{post.desc}}</td>
-                <td><div class="a-btn"><a href="{% url 'updatepost' post.id %}" >Edit</a></div></td>
-                <td><div class="a-btn">
+                <td>
+                <div class="a-btn"><a href="{% url 'updatepost' post.id %}" >Edit</a></div>
+                {% if perms.blog.delete_post %}
+                <div class="a-btn">
                         <form action="{% url 'deletepost' post.id %}" method="post" class="d-inline">
                         {% csrf_token %}
                         <input type="submit" value="Delete">
                         </form>
                 </div>
+                {% endif %}
                 </td>
             </tr>
             {% endfor %}
@@ -48,5 +49,13 @@
     {% else %}
     <h1>No data</h1>
     {% endif %}
+</section>
+<section class="container-sidebar"> 
+    <h4>Profile</h4>
+    <h5>{{full_name}}</h5>
+    {% for gp in gps %}
+    <p>{{gp.name}}</p>
+    {% endfor %}
+</section
 </section>
 {% endblock content %}

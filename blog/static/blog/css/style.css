@@ -229,16 +229,23 @@ html{
  }
 
 /* dashboard00000000000000000000000000000000000000000000000000000000000000000000 */
-.container-table{
+.container-dashboard{
+    display: grid;
+    grid-template-columns: 3.5fr 1fr;
+    gap: 1.5rem;
     background-color: #eee;
     padding: 10rem;
+}
+.container-table{
+    /* background-color: #eee; */
+    /* padding: 3rem; */
 }
 
 .container-table h1{
     font-size: 25px;    
     background-color: #83abc7;
     text-align: center;
-    margin: 10px 0;
+    margin: 3px 0;
 }
 
 
@@ -252,6 +259,7 @@ html{
     color: black; 
     border: 2px solid #008CBA;
     border-radius: 5px;
+    margin: 5px auto;
 }
 
 .container-table .a-btn a:hover{
@@ -265,12 +273,37 @@ html{
     color: black; 
     border: 2px solid tomato;
     border-radius: 5px;
+    margin: 5px auto;
 }
 
 .container-table .a-btn form input:hover{
     background-color: Tomato;
     color: white;
 }
+
+.main .container-dashboard .container-sidebar {
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 50px;
+    font-size: 12px;
+    border-radius: 10px 10px 0 0 ;
+    overflow: hidden;
+}
+
+.main .container-dashboard .container-sidebar h4{
+    color: var(--orange);
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.main .container-dashboard .container-sidebar h5{
+    font-size: 20px;
+}
+
+.main .container-dashboard .container-sidebar p{
+    font-size: 15px;
+}
+
 /*content table 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111*/
 .container-table .content-table{
     border-collapse: collapse;

@@ -3,6 +3,7 @@ from .models import Post, Category
 from django.contrib import messages
 from .forms import SignUpForm, LoginForm, PostForm
 from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.models import Group
 from django.contrib.sites.shortcuts import get_current_site  
 from django.utils.encoding import force_bytes, force_str  
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode  
@@ -33,9 +34,14 @@ def contact(request):
 def dashboard(request):
     if request.user.is_authenticated:
         posts = Post.objects.all()
-        return render(request, 'blog/dashboard.html', {'posts':posts})
+        user = request.user
+        full_name = user.get_full_name()
+        gps = user.groups.all()
+        print(gps)
+        print(full_name)
+        return render(request, 'blog/dashboard.html', {'posts':posts, 'full_name':full_name, 'gps':gps})
     else:
-        return HttpReturnRedirect('login')
+        return HttpResponseRedirect('login')
     
 
 def user_logout(request):
@@ -96,6 +102,8 @@ def activate(request, uidb64, token):
     if user is not None and account_activation_token.check_token(user, token):  
         user.is_active = True  
         user.save()  
+        group = Group.objects.get(name="Author")
+        user.groups.add(group)
         # return HttpResponse('Thank you for your email confirmation. Now you can login your account.') 
         return HttpResponseRedirect('/login/') 
     else:  
@@ -116,7 +124,7 @@ def add_post(request):
             form = PostForm()
         return render(request, 'blog/addpost.html', {'form':form})
     else:
-        return HttpReturnRedirect('/login/')
+        return HttpResponseRedirect('/login/')
 
 
 def update_post(request, id):
