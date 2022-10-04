@@ -152,6 +152,71 @@ html{
     background: var(--orange);
 }
 
+
+/*About US 1111111111111111111111111111111111111111111111111111111111111111111111111111111*/
+.about{
+    background-color: #eee;
+    padding: 10px;
+}
+.about-container{
+    width: 85%;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 70px;  
+    margin-bottom: 50px;  
+    box-shadow: var(--box-shadow);
+
+}
+
+.image-container{
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img{
+    width: 500px;
+    height: 500px;
+}
+
+.text-container{
+    text-align: flex-start;
+}
+
+.text-container h1{
+    font-size: 50px;
+    padding: 10px 0px;
+
+}
+
+.text-container p{
+    font-size: 22px;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+}
+
+.text-container a{
+    padding: 12px;
+    border: 2px solid rebeccapurple;
+    background-color: rebeccapurple;
+    color: white;
+    font-size: 10px;
+    border-radius: 10px;
+    transition: .3s all ease;
+}
+
+.text-container a:hover{
+    background-color: transparent;
+    color: black;
+    border: 2px solid rebeccapurple;
+}
+
 /* login signup111111111111111111111111111111111111111111111111111111111111*/
 .main .section{
     padding: 20px;

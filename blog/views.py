@@ -28,9 +28,6 @@ def home(request):
 def about(request):
     return render(request, 'blog/about.html')
 
-def contact(request):
-    return render(request, 'blog/contact.html')
-
 def dashboard(request):
     if request.user.is_authenticated:
         posts = Post.objects.all()
