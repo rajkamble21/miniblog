@@ -111,7 +111,8 @@ html{
     overflow: hidden;
     background: #fff;
     margin-bottom: 1.5rem;
-
+    position: sticky;
+    top: 10rem;
 }
 
 .container .sidebar .box .title{
